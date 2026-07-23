@@ -10,7 +10,9 @@ import city from "./src/routes/city.routes.js"
 import emp from "./src/routes/employee.routes.js"
 import { errorHandler } from "./src/middleware/error.middleware.js"
 import rateLimit from "express-rate-limit"
+import dns from "node:dns"
 
+dns.setServers(['8.8.8.8', '1.1.1.1']);
  dotenv.config()
 const app=express();
 Mongodb()
