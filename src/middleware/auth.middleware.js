@@ -5,7 +5,7 @@ export const authMiddler = (req ,res, next)=>{
         if(!authHeader){
             return res.status(401).json({message:"unauthorized access"})
         }
-        if(authHeader.startsWith("Bearer")){
+        if(!authHeader.startsWith("Bearer ")){
             return res.status(400).json("format invaild")
              }
              const token = authHeader.split(" ")[1]

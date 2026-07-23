@@ -26,7 +26,10 @@ const rateLimiter = rateLimit({
 });
 
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+  origin: "https://employee-management-systems-omega.vercel.app",
+  credentials: true
+}))
 app.use("/uploads", express.static("src/uploads"));
 app.use("/api/auth" , router)
 app.use("/api/Dept",dept)
