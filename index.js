@@ -35,7 +35,9 @@ app.use("/api/City" ,city)
 app.use("/api/Emp", emp)
 app.use(errorHandler)
 app.use(rateLimiter)
-
+app.get("/", (req,res)=>{
+    res.json("hello this is backend")
+})
 app.listen(PORT,()=>{
   console.log(`server is successfully running on http://localhost:${PORT}`);
 })
